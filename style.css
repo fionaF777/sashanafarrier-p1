@@ -2,3 +2,14 @@ h1 {
     color: purple;
     background-color: lightgray;
 }
+
+form input,
+form button {
+    padding: 10px 20px;
+}
+
+form button {
+    background-color: lightblue;
+    border: none;
+    cursor: pointer;
+}
