@@ -7,16 +7,63 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <h1>Welcome to My First Programming Assignment</h1>
-
-   <p>Hello, I'm Sashana. This is a simple webpage created for my first assignment.</p>
-   <img src="/sashanafarrier-p1/3d-minimal-programming-icon-coding-screen-web-development-concept-laptop-with-a-coding-screen-and-a-coding-icon-3d-illustration-png.webp" alt="Web development illustration" width="300">
-
-   <form>
-    <label for="name">Name:</label>
-     <input id="name" type="text">
-     <button>Submit</button>
-   </form>
+    <header>
+        <div class="wrapper">
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+    </header>
+    <main>
+        <div class="page-title">
+        <h1>Welcome to My First Programming Assignment</h1>
+    </div>
+    <section id="about">
+        <div class="wrapper">
+            <div class="content">
+                <div class="text">
+                    <h2>About Me</h2>
+                    <p>Hello, I'm Sashana. This is a simple webpage created for my first assignment.</p>
+                </div>
+                <img src="/sashanafarrier-p1/3d-minimal-programming-icon-coding-screen-web-development-concept-laptop-with-a-coding-screen-and-a-coding-icon-3d-illustration-png.webp" alt="Web development illustration" >
+            </div>
+        </div>
+     </section>
+     <section id="projects">
+        <div class="wrapper">
+             <h2>My Projects</h2>
+            <p>Here are some of the projects I've worked on:</p>
+            <ul class="cards">
+                <li class="card">
+                    <h3>Project 1: A simple HTML/CSS webpage</h3>
+                    <p>This project involved creating a basic webpage using HTML and CSS. It includes a header, navigation menu, and a section with some content.</p>
+                    </li>
+                <li class="card">
+                    <h3>Project 2: A JavaScript calculator</h3>
+                    <p>This project was a simple calculator built using JavaScript. It allows users to perform basic arithmetic operations like addition, subtraction, multiplication, and division.</p>
+                </li>
+                <li class="card">
+                    <h3>Project 3: A responsive portfolio site</h3>
+                    <p>This project involved creating a responsive portfolio website using HTML, CSS, and JavaScript. It features a modern design and is optimized for different screen sizes.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+     <section id="contact"> 
+        <div class="wrapper">
+           <form>
+            <label for="name">Name:</label>
+            <input id="name" type="text">
+            <button>Submit</button>
+            </form> 
+        </div>  
+    </section> 
+    </main>
    <script src="script.js"></script>
 </body>
 </html>
