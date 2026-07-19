@@ -1,6 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main {
+    padding: 20px;
+}
+
 h1 {
     color: purple;
+}
+
+h2, h3 {
+    margin-block: 16px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+section {
+    margin-block: 32px;
+}
+
+.page-title {
     background-color: lightgray;
+    padding: 20px;
+    text-align: center;
 }
 
 form input,
@@ -8,8 +40,68 @@ form button {
     padding: 10px 20px;
 }
 
+form {
+    margin-bottom: 50px;
+}
+
 form button {
     background-color: lightblue;
     border: none;
     cursor: pointer;
+}
+
+.container {
+    display: flex;
+}
+
+.wrapper {
+    width: 80%;
+    margin-inline: auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+}
+
+#about .content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card {
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.cards {
+    display: flex;
+    gap: 16px;
+}
+
+.cards {
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .cards {
+        flex-direction: row;
+    }
+}
+
+
+@media (min-width: 870px) {
+    #about .content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
