@@ -37,11 +37,11 @@ function cleanInput(text) {
     return text.trim();
 }
 
-let input = " cherry ";
+// let input = " cherry ";
 
-if (cleanInput(input).length > 0) {
-    console.log(formatName(input));
-}
+// if (cleanInput(input).length > 0) {
+//     console.log(formatName(input));
+// }
 
 
 let sum = a + b;
@@ -85,3 +85,79 @@ let tax = 0.1;
 let total = price + price * tax;
 
 console.log(total);
+
+let name = "";
+
+if (name === "") {
+
+console.log("Name required");
+
+}
+
+if (name === "") {
+
+console.log("Name required");
+
+} else {
+
+console.log("Valid name");
+
+}
+
+let email = "";
+
+if (email === "") {
+
+console.log("Email required");
+
+} else {
+
+console.log("Valid email");
+
+}
+
+let password = "123";
+
+if (password.length < 6) {
+
+console.log("Too short");
+
+} else {
+
+console.log("Good password");
+
+}
+
+let input = "";
+
+if (input === "") {
+
+console.log("Required field");
+
+} else {
+
+console.log("Valid input");
+
+}
+
+name = "Cherry";
+
+password = "123456";
+
+if (password.length < 6) {
+
+console.log("Too short");
+
+}
+
+else if (password.length < 10) {
+
+console.log("Medium strength");
+
+}
+
+else {
+
+console.log("Strong password");
+
+}
