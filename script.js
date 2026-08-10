@@ -187,24 +187,22 @@ function displayTasks() {
 
 function addTask(task) { tasks.push(task); }
 
-function removeLast() { tasks.pop(); }
+function removeLast() { return tasks.pop(); }
 
 document.getElementById("remove-last-item-btn").addEventListener("click", function() {
-    removeLast();
+    console.log("removed task: " + removeLast());
     displayTasks();
-   
 });
 
 function refreshTasks() {
     tasks = tasksCopy.slice();      
     displayTasks();
-    console.log(tasks);
+    console.log("Tasks refreshed: ", tasks);
 }
 
 document.getElementById("refresh-tasks-btn").addEventListener("click", function() {
     refreshTasks();
 });
 
-console.log(tasks);
 
 
