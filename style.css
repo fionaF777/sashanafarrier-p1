@@ -92,6 +92,35 @@ form button {
     flex-direction: column;
 }
 
+#list {
+    list-style-type:disc;
+}
+
+#task-list .btns > * {
+    margin-bottom: 16px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#remove-last-item-btn {
+    background-color: lightcoral;
+}
+
+#refresh-tasks-btn {
+    background-color: lightgreen;
+}
+
+#remove-last-item-btn:hover {
+    background-color: darkred;
+    color: white;
+}
+
+#refresh-tasks-btn:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
 @media (min-width: 768px) {
     .cards {
         flex-direction: row;
