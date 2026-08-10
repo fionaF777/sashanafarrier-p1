@@ -1,163 +1,210 @@
-console.log("My first website!");
+// console.log("My first website!");
 
-//Basic math operations
-let a = 10;
-let b = 5;
+// //Basic math operations
+// let a = 10;
+// let b = 5;
 
-function add(a, b) {
-    return a + b;
-}
+// function add(a, b) {
+//     return a + b;
+// }
 
-function subtract(a, b) {
-    return a - b;
-}
+// function subtract(a, b) {
+//     return a - b;
+// }
 
-function multiply(a, b) {
-    return a * b;
-}
+// function multiply(a, b) {
+//     return a * b;
+// }
 
-function divide(a, b) {
-    return a / b;
-}
+// function divide(a, b) {
+//     return a / b;
+// }
 
-console.log(add(8, 2));
+// console.log(add(8, 2));
 
-console.log(subtract(8, 2));
+// console.log(subtract(8, 2));
 
-console.log(multiply(8, 2));
+// console.log(multiply(8, 2));
 
-console.log(divide(8, 2));
+// console.log(divide(8, 2));
 
 
-function formatName(name) {
-    return name.toUpperCase();
-}
+// function formatName(name) {
+//     return name.toUpperCase();
+// }
 
-function cleanInput(text) {
-    return text.trim();
-}
+// function cleanInput(text) {
+//     return text.trim();
+// }
 
-// let input = " cherry ";
+// // let input = " cherry ";
 
-// if (cleanInput(input).length > 0) {
-//     console.log(formatName(input));
+// // if (cleanInput(input).length > 0) {
+// //     console.log(formatName(input));
+// // }
+
+
+// let sum = a + b;
+
+// console.log(sum);
+
+// //String operations
+// let first = "Hello";
+// let second = "World";
+
+// console.log(first + " " + second);
+// console.log(a > b);
+// console.log(a == b);
+
+// //Build a simple calculator
+// let num1 = 8;
+// let num2 = 2;
+
+// function calculate(n1, n2) {
+//   let add = n1 + n2;
+//   let subtract = n1 - n2;
+//   let multiply = n1 * n2;
+//   let divide = n1 / n2;
+//   return { add, subtract, multiply, divide };
+// }
+
+// function printResults() {
+//     let results = calculate(num1, num2);
+//     console.log("Results:", results);
+//     console.log("Add:", results.add);
+//     console.log("Subtract:", results.subtract);
+//     console.log("Multiply:", results.multiply);
+//     console.log("Divide:", results.divide);
+// }
+
+// printResults();
+
+// //Modify calculator
+// let price = 20;
+// let tax = 0.1;
+// let total = price + price * tax;
+
+// console.log(total);
+
+// let name = "";
+
+// if (name === "") {
+
+// console.log("Name required");
+
+// }
+
+// if (name === "") {
+
+// console.log("Name required");
+
+// } else {
+
+// console.log("Valid name");
+
+// }
+
+// let email = "";
+
+// if (email === "") {
+
+// console.log("Email required");
+
+// } else {
+
+// console.log("Valid email");
+
+// }
+
+// let password = "123";
+
+// if (password.length < 6) {
+
+// console.log("Too short");
+
+// } else {
+
+// console.log("Good password");
+
+// }
+
+// let input = "";
+
+// if (input === "") {
+
+// console.log("Required field");
+
+// } else {
+
+// console.log("Valid input");
+
+// }
+
+// name = "Cherry";
+
+// password = "123456";
+
+// if (password.length < 6) {
+
+// console.log("Too short");
+
+// }
+
+// else if (password.length < 10) {
+
+// console.log("Medium strength");
+
+// }
+
+// else {
+
+// console.log("Strong password");
+
 // }
 
 
-let sum = a + b;
+//Build an Interactive Task List
 
-console.log(sum);
+let tasks = ["Study", "Workout"];
+let list = document.getElementById("list");
 
-//String operations
-let first = "Hello";
-let second = "World";
+addTask("Read");
 
-console.log(first + " " + second);
-console.log(a > b);
-console.log(a == b);
+// Create a copy of the tasks array to use for refreshing
+let tasksCopy = [...tasks];
 
-//Build a simple calculator
-let num1 = 8;
-let num2 = 2;
+displayTasks();
+console.log(tasks);
 
-function calculate(n1, n2) {
-  let add = n1 + n2;
-  let subtract = n1 - n2;
-  let multiply = n1 * n2;
-  let divide = n1 / n2;
-  return { add, subtract, multiply, divide };
+
+function displayTasks() {
+    list.innerHTML = "";
+
+    for (let i = 0; i < tasks.length; i++) {
+        list.innerHTML += "<li>" + tasks[i] + "</li>";
+    }
 }
 
-function printResults() {
-    let results = calculate(num1, num2);
-    console.log("Results:", results);
-    console.log("Add:", results.add);
-    console.log("Subtract:", results.subtract);
-    console.log("Multiply:", results.multiply);
-    console.log("Divide:", results.divide);
+function addTask(task) { tasks.push(task); }
+
+function removeLast() { tasks.pop(); }
+
+document.getElementById("remove-last-item-btn").addEventListener("click", function() {
+    removeLast();
+    displayTasks();
+   
+});
+
+function refreshTasks() {
+    tasks = tasksCopy.slice();      
+    displayTasks();
+    console.log(tasks);
 }
 
-printResults();
+document.getElementById("refresh-tasks-btn").addEventListener("click", function() {
+    refreshTasks();
+});
 
-//Modify calculator
-let price = 20;
-let tax = 0.1;
-let total = price + price * tax;
+console.log(tasks);
 
-console.log(total);
 
-let name = "";
-
-if (name === "") {
-
-console.log("Name required");
-
-}
-
-if (name === "") {
-
-console.log("Name required");
-
-} else {
-
-console.log("Valid name");
-
-}
-
-let email = "";
-
-if (email === "") {
-
-console.log("Email required");
-
-} else {
-
-console.log("Valid email");
-
-}
-
-let password = "123";
-
-if (password.length < 6) {
-
-console.log("Too short");
-
-} else {
-
-console.log("Good password");
-
-}
-
-let input = "";
-
-if (input === "") {
-
-console.log("Required field");
-
-} else {
-
-console.log("Valid input");
-
-}
-
-name = "Cherry";
-
-password = "123456";
-
-if (password.length < 6) {
-
-console.log("Too short");
-
-}
-
-else if (password.length < 10) {
-
-console.log("Medium strength");
-
-}
-
-else {
-
-console.log("Strong password");
-
-}
