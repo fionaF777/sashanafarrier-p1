@@ -165,44 +165,68 @@
 
 //Build an Interactive Task List
 
-let tasks = ["Study", "Workout"];
-let list = document.getElementById("list");
+// let tasks = ["Study", "Workout"];
+// let list = document.getElementById("list");
 
-addTask("Read");
+// addTask("Read");
 
-// Create a copy of the tasks array to use for refreshing
-let tasksCopy = [...tasks];
+// // Create a copy of the tasks array to use for refreshing
+// let tasksCopy = [...tasks];
 
-displayTasks();
-console.log(tasks);
+// displayTasks();
+// console.log(tasks);
 
 
-function displayTasks() {
-    list.innerHTML = "";
+// function displayTasks() {
+//     list.innerHTML = "";
 
-    for (let i = 0; i < tasks.length; i++) {
-        list.innerHTML += "<li>" + tasks[i] + "</li>";
-    }
-}
+//     for (let i = 0; i < tasks.length; i++) {
+//         list.innerHTML += "<li>" + tasks[i] + "</li>";
+//     }
+// }
 
-function addTask(task) { tasks.push(task); }
+// function addTask(task) { tasks.push(task); }
 
-function removeLast() { return tasks.pop(); }
+// function removeLast() { return tasks.pop(); }
 
-document.getElementById("remove-last-item-btn").addEventListener("click", function() {
-    console.log("removed task: " + removeLast());
-    displayTasks();
+// document.getElementById("remove-last-item-btn").addEventListener("click", function() {
+//     console.log("removed task: " + removeLast());
+//     displayTasks();
+// });
+
+// function refreshTasks() {
+//     tasks = tasksCopy.slice();      
+//     displayTasks();
+//     console.log("Tasks refreshed: ", tasks);
+// }
+
+// document.getElementById("refresh-tasks-btn").addEventListener("click", function() {
+//     refreshTasks();
+// });
+
+
+
+let links = document.querySelectorAll("nav a");
+console.log(links);
+
+
+links.forEach(link => {
+    link.onclick = function() {
+        let target = document.querySelector(this.getAttribute("href"));
+        target.scrollIntoView({ behavior: "smooth" });
+    };
 });
 
-function refreshTasks() {
-    tasks = tasksCopy.slice();      
-    displayTasks();
-    console.log("Tasks refreshed: ", tasks);
-}
-
-document.getElementById("refresh-tasks-btn").addEventListener("click", function() {
-    refreshTasks();
+links.forEach(link => {
+        link.onclick = function() {
+        this.classList.add("active");
+    };
 });
 
-
+links.forEach(link => {
+    link.onclick = function() {
+        links.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+    };
+});
 
