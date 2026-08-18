@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -57,6 +61,12 @@ form button {
 .wrapper {
     width: 80%;
     margin-inline: auto;
+}
+
+.active {
+    color: rgb(235, 6, 223);
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .nav {
