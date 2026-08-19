@@ -73,6 +73,32 @@
             <ul id="list"></ul>
         </div>
     </section>
+    <hr>
+    <section id="key-logger">
+        <div class="wrapper">
+            <div class="header">
+                <h2>Key Logger</h2>
+                <p>Press any key on your keyboard and see the output below:</p>
+            </div>
+            <div class="output-header">
+                <p>Output</p>
+                <button id="button">Clear Output</button>
+            </div>
+            <textarea id="output" readonly></textarea>
+            <div class="footer">
+                <ul>
+                    <li>
+                        <p>Keys Pressed: <span id="key-count">0</span></p>
+                    </li>
+                    <li>
+                        <p>Session Duration: <span id="session-duration">0</span> seconds</p>
+                    </li>
+                    <li>
+                        <p>Start Time: <span id="start-time">0</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </main>
    <script src="script.js"></script>
 </body>
