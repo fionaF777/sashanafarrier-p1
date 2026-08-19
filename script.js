@@ -204,29 +204,57 @@
 //     refreshTasks();
 // });
 
+//Add Smooth Scroll + Active Navigation
+
+// let links = document.querySelectorAll("nav a");
+// console.log(links);
 
 
-let links = document.querySelectorAll("nav a");
-console.log(links);
+// links.forEach(link => {
+//     link.onclick = function() {
+//         let target = document.querySelector(this.getAttribute("href"));
+//         target.scrollIntoView({ behavior: "smooth" });
+//     };
+// });
+
+// links.forEach(link => {
+//         link.onclick = function() {
+//         this.classList.add("active");
+//     };
+// });
+
+// links.forEach(link => {
+//     link.onclick = function() {
+//         links.forEach(l => l.classList.remove("active"));
+//         this.classList.add("active");
+//     };
+// });
 
 
-links.forEach(link => {
-    link.onclick = function() {
-        let target = document.querySelector(this.getAttribute("href"));
-        target.scrollIntoView({ behavior: "smooth" });
-    };
-});
+let button = document.getElementById("button");
+let output = document.getElementById("output");
+let keyCount = document.getElementById("key-count");
+let sessionDuration = document.getElementById("session-duration");
+let startTime = document.getElementById("start-time");
 
-links.forEach(link => {
-        link.onclick = function() {
-        this.classList.add("active");
-    };
-});
+let keysPressed = 0;
+let sessionStart = Date.now();
 
-links.forEach(link => {
-    link.onclick = function() {
-        links.forEach(l => l.classList.remove("active"));
-        this.classList.add("active");
-    };
-});
+document.onkeydown = function(event) {
+    output.textContent += `${event.key} `;
+    keysPressed++;
+    keyCount.textContent = keysPressed;
+    sessionDuration.textContent = Math.floor((Date.now() - sessionStart) / 1000);
+    startTime.textContent = new Date(sessionStart).toLocaleTimeString();
+};
 
+startTime.textContent = "00:00:00";
+
+button.onclick = function() {
+    output.textContent = "";
+    keysPressed = 0;
+    keyCount.textContent = keysPressed;
+    sessionStart = Date.now();
+    sessionDuration.textContent = 0;
+    startTime.textContent = startTime.textContent = "00:00:00";
+}
